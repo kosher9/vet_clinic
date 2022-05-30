@@ -1,9 +1,10 @@
 # curriculum-databases-projects-template
 
 ## Getting Started
-
 This repository includes files with plain SQL that can be used to recreate a database:
 
+- Install PostgreSQL.
+- Use PostgreSQL for the following instructions.
 - Use [schema.sql](./schema.sql) to create all tables.
 - Use [data.sql](./data.sql) to populate tables with sample data.
 - Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**

@@ -7,7 +7,8 @@ CREATE TABLE animals (
     escape_attempts INT,
     neutered BOOLEAN ,
     weight_kg DECIMAL,
-    species varchar(40)
+    FOREIGN KEY (species_id) REFERENCES species(id),
+    FOREIGN KEY (owners_id) REFERENCES owners(id)
 );
 
 CREATE TABLE IF NOT EXISTS owners (

@@ -7,5 +7,11 @@ CREATE TABLE animals (
     escape_attempts INT,
     neutered BOOLEAN ,
     weight_kg DECIMAL,
-    species varchar(40),
+    species varchar(40)
 );
+
+CREATE TABLE IF NOT EXISTS owners (
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    full_name VARCHAR(20),
+    age INT
+) ;

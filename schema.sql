@@ -8,7 +8,7 @@ CREATE TABLE animals (
     neutered BOOLEAN ,
     weight_kg DECIMAL,
     FOREIGN KEY (species_id) REFERENCES species(id),
-    FOREIGN KEY (owners_id) REFERENCES owners(id)
+    FOREIGN KEY (owner_id) REFERENCES owners(id)
 );
 
 CREATE TABLE IF NOT EXISTS owners (

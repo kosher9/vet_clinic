@@ -62,13 +62,3 @@ SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth >= '1990-0
 
 ALTER TABLE animals DROP COLUMN species;
 
-begin;
-UPDATE animals
-SET species_id = 2
-WHERE name LIKE '%mon';
-
-UPDATE animals
-SET species_id = 1
-WHERE species_id IS null;
-commit;
-

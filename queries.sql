@@ -14,6 +14,8 @@ UPDATE animals
 SET species = 'unspecified';
 ROLLBACK;
 
+SELECT * FROM animals;
+
 begin;
 UPDATE animals
 SET species = 'digimon'
@@ -24,9 +26,13 @@ SET species = 'pokemon'
 WHERE species IS null;
 COMMIT;
 
+SELECT * FROM animals;
+
 begin;
 DELETE FROM animals;
 rollback;
+
+SELECT * FROM animals;
 
 begin;
 DELETE FROM animals
@@ -44,6 +50,8 @@ SET weight_kg = weight_kg * (-1)
 WHERE weight_kg < 0;
 
 commit;
+
+SELECT * FROM animals;
 
 SELECT COUNT (*) as number_of_animals FROM animals;
 SELECT COUNT (*) as number_no_escape FROM animals WHERE escape_attempts = 0;

@@ -15,3 +15,8 @@ CREATE TABLE IF NOT EXISTS owners (
     full_name VARCHAR(20),
     age INT
 ) ;
+
+CREATE TABLE IF NOT EXISTS species(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(10)
+);

@@ -9,3 +9,5 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg, 
 INSERT INTO owners (full_name, age) VALUES('Sam Smith', 34), ('Jennifer Orwell', 19), ('Bob', 45), ('Melody Pond', 77), ('Dean Winchester', 14), ('Jodie Whittaker', 38);
 
 INSERT INTO species (name) VALUES ('Pokemon'), ('Digimon');
+
+INSERT INTO vets (name, age, date_of_graduation) VALUES('William Tatcher', 45, 'Apr 23, 2000'), ('Maisy Smith', 26, 'Jan 17, 2019'), ('Stephanie Mendez', 64, 'May 4, 1981'), ('Jack Harkness', 38, 'Jun 08, 2008');

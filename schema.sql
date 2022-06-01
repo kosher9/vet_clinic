@@ -6,10 +6,14 @@ CREATE TABLE animals (
     date_of_birth DATE,
     escape_attempts INT,
     neutered BOOLEAN ,
-    weight_kg DECIMAL,
-    FOREIGN KEY (species_id) REFERENCES species(id),
-    FOREIGN KEY (owner_id) REFERENCES owners(id)
+    weight_kg DECIMAL
 );
+
+ALTER TABLE animals
+ADD COLUMN species_id INT,
+ADD FOREIGN KEY (species_id) REFERENCES species(id),
+ADD COLUMN owner_id INT,
+ADD FOREIGN KEY (owner_id) REFERENCES owners(id);
 
 CREATE TABLE IF NOT EXISTS owners (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -28,3 +32,26 @@ CREATE TABLE IF NOT EXISTS vets(
     age INT,
     date_of_graduation DATE
 );
+
+CREATE TABLE IF NOT EXISTS specializations(
+    vet_id INT,
+    species_id INT
+);
+
+CREATE TABLE IF NOT EXISTS specializations();
+
+ALTER TABLE specializations
+ADD COLUMN vet_id INT,
+ADD FOREIGN KEY (vet_id) REFERENCES vets(id),
+ADD COLUMN species_id INT,
+ADD FOREIGN KEY (species_id) REFERENCES species(id);
+
+CREATE TABLE IF NOT EXISTS visits(
+    date DATE
+);
+
+ALTER TABLE visits
+ADD COLUMN animal_id INT,
+ADD FOREIGN KEY (animal_id) REFERENCES animals(id),
+ADD COLUMN vet_id INT,
+ADD FOREIGN KEY (vet_id) REFERENCES vets(id);

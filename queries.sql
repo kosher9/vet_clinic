@@ -205,6 +205,19 @@ ON v.animal_id = a.id
 JOIN vets ve
 ON ve.id = v.vet_id;
 
+-- How many visits were with a vet that did not specialize in that animal's species?
+
+SELECT ve.name, COUNT(v.vet_id) FROM vets ve
+JOIN visits v
+ON v.vet_id = ve.id
+JOIN animals a
+ON a.id = v.animal_id
+WHERE a.species_id IN (SELECT sp.species_id FROM specializations sp
+                          JOIN vets v
+                          ON v.id = sp.vet_id
+                          WHERE v.name = ve.name)
+GROUP BY ve.name;
+
 -- What specialty should Maisy Smith consider getting? Look for the species she gets the most
 
 SELECT ve.name, a.species_id , COUNT(a.species_id) as species_count from vets ve
